@@ -13,7 +13,7 @@ Both will need the policy : AWSLambdaBasicExecutionRole
 Then we added the policy : AWSLambdaSQSQueueExecutionRole (but I think it is possible to limit the permissions to the sqs we are using only)
 And, for the lambda function interacting with the dynamo DB, add a inline policy, for the service dynamoDB, select the actions "PutItem" and "GetItem", finally, chose the dynamoDB you want to interact with as ressource, with it arn.
 ### lambda functions
-```js
+```python
 def send_sqs_message(QueueName, msg_body):
     sqs = boto3.resource('sqs')
     queue = sqs.get_queue_by_name(QueueName = QueueName)
