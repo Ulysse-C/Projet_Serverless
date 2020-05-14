@@ -10,8 +10,11 @@ Nothing more than the basic creation of Aws, note somewhere the name and the arn
 ### Roles
 You will need to create two new roles with IAM for your lambda functions, so you will chose the use case "Lambda".
 Both will need the policy : AWSLambdaBasicExecutionRole
+
 then, for the one putting in the sqs, the policy : AmazonSQSFullAccess  (but I think it is possible to limit the permissions to the sqs we are using only)
+
 And, for the lambda function interacting with the dynamo DB, add a inline policy, for the service dynamoDB, select the actions "PutItem" and "GetItem", finally, chose the dynamoDB you want to interact with as ressource, with it arn.
+
 ### lambda functions
 ```python
 def send_sqs_message(QueueName, msg_body):
@@ -42,7 +45,6 @@ AWS.config.update({region: "eu-west-3"});
 exports.handler = async (event, context, callback) => {
     const ddb = new AWS.DynamoDB({apiVersion: "2012-10-08"});
     const documentClient = new AWS.DynamoDB.DocumentClient({region: "eu-west-3"});
-    console.log(event.Records);
     for(const {messageId, body} of event.Records){
         const obj = JSON.parse(body);
         for(const {idMessage, number} of obj.Records){
