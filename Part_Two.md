@@ -1,5 +1,5 @@
 # Project Serverless, Part Two
-Simple setup for updating a Aws DynamoDB with lambda functions and Sqs
+Simple setup for a dashboard hosted in S3 with lambda functions, Sqs and Dynamo DB, from a website
 
 ### What you will know
 ![global schema](images/rapport2.png)
