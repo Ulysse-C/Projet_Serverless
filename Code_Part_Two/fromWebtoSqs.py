@@ -4,6 +4,8 @@ import requests
 import xmltodict
 import boto3
 from botocore.exceptions import ClientError
+from datetime import date
+
 
 def send_sqs_message(QueueName, msg_body):
     sqs = boto3.resource('sqs')
@@ -26,11 +28,12 @@ def send_sqs_message(QueueName, msg_body):
 
 
 def lambda_handler(event, context):
-    message = requests.get("https://rte-france.com/getEco2MixXml.php?type=mix&&dateDeb=11/04/2020&dateFin=11/04/2020&mode=NORM")
-    QueueName = 'sqsNumber'
+    d1 = date.today().strftime("%d/%m/%Y")
+    message = requests.get("https://rte-france.com/getEco2MixXml.php?type=mix&&dateDeb="+d1+"&dateFin="+d1+"&mode=NORM")
+    QueueName = 'trial'
     logging.basicConfig(level=logging.DEBUG,
                         format='%(levelname)s: %(asctime)s: %(message)s')
-    jsonmessage = json.dumps(xmltodict.parse(message.text))  #transform the result of the request on JSON
+    jsonmessage = json.dumps(xmltodict.parse(message.text))
     msg = send_sqs_message(QueueName,jsonmessage)
     if msg is not None:
         logging.info(f'Sent SQS message ID: {msg["MessageId"]}')
