@@ -2,8 +2,8 @@
 
 ### From [aws console](https://eu-west-3.console.aws.amazon.com/sqs/home?region=eu-west-3)
 
-*	chose  "Create New Queue"
-*	chose a name and the type of the queue. Our example use a standard queue.
+*	choose  "Create New Queue"
+*	choose a name and the type of the queue. Our example use a standard queue.
 * your queue is now created.
 
 #### Good to know
