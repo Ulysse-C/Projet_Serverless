@@ -1,0 +1,23 @@
+# How to create a IAM Role
+
+### From [aws console](https://console.aws.amazon.com/iam/home?region=eu-west-3#/home)
+
+##### The role
+*	On the right panel, choose Roles
+* Choose Create role
+* Choose AWS service for the trusted entity, and choose a common use case. This case will very likely be modified later so
+don't worry to much about it.
+
+##### The policies
+* For basic needs, you can choose one or several default AWS policies such as AWSLambdaBasicExecutionRole.
+* For more precise needs, choose Create policy
+* Choose the service you want to have permission on, for example DynamoDB.
+* Choose the actions you want to unlock. For example GetTime ine the Read section, and CreateTable in the Write section.
+* Choose the resources for which you want to grant permisions.
+* Choose your policy's name and create it.
+* Go back in the role page, and select your DIY policy.
+* Tags are optional, you can skip this step.
+* Choose your role name and create yout role
+
+#### Good to know
+* Choose obvious name for your role such as "sqs-to-dynamoDB"
