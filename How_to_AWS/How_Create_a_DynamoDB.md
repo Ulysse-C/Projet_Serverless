@@ -2,7 +2,9 @@
 
 ### From [aws console](https://eu-west-3.console.aws.amazon.com/dynamodb/home?region=eu-west-3#)
 
-*	chose create Table
+official documentation [here](https://docs.aws.amazon.com/dynamodb/index.html)
+
+*	chose "create Table"
 *	chose your Table name
 *	chose the Primary key
 *	(optionnal) add a sort key
