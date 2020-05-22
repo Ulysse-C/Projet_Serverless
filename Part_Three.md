@@ -13,3 +13,6 @@ At the creation of the ES, you will need to chose the identification method to a
 
 ### Kibana Dashboard
 Connect to your Elasticsearch data with the connection with their index, then use the pannels on the left side to create dashboard and visualisations, verify that the type of your values are recognized by kibana (especialy date or number) to allow a smooth visualisation creation.
+
+### Note
+The code before the Sqs is in the folder **Code_Part_Two** and the one after in the folder **Code_Part_Three**
