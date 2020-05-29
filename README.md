@@ -1,13 +1,17 @@
 # Project Serverless
 
 This project is the project of end of second year of engineering school.
-Using Aws services
+The objective was to get data from [Rte](https://rte-france.com/fr/eco2mix/eco2mix) to display it, using serverless technologies, especialy lambda functions.
+First using Aws services, then kubernetes.
 
-### Part One, from random to DynamoDB 
-A Lambda function write a random number in a Sqs, and another one take the value from the Sqs to a DynamoDB.
+### Part One, Aws
+There is three part in this exemple:
 
-### Part Two,  from Web to DynamoDB
-An extension of **Part One**, but now the first Lambda take data from a website (Rte) and the Data in the Dynamo is used to host a dashboard in S3.
+[1.](https://github.com/Ulysse-C/Projet_Serverless/tree/master/AWS/from_random_to_DynamoDB) Saving randomly generated numbers into DynamoDB, passing through Sqs.
 
-### Part Three, from Web to ElasticSearch Service
-Another version of **Part Two**, instead of a dynamo, an ElasticSeatch Service is used to allow the use of a kibana dashboard
+[2.](https://github.com/Ulysse-C/Projet_Serverless/tree/master/AWS/from_Web_to_DynamoDB) Getting data from Rte, putting it in a DynamoDB, and having a static dashboard in Amazon S3
+
+[3.](https://github.com/Ulysse-C/Projet_Serverless/tree/master/AWS/from_Web_to_ElasticSearch_Service) Getting data from Rte, putting it in a ElasticSearch service, and having a kibana dynamic dashboard
+
+### Part Two,  Kubernetes
+A kubernetes version of the Aws part Three.
