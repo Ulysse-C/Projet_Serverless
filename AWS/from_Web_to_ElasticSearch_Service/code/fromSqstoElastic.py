@@ -80,5 +80,4 @@ def handler(event, context):
                     if (testDate(latestDate, date)): #True if date appends later than the latest date in the DB
                         r = requests.post(url, auth=awsauth, json=v, headers=headers)
                         print(r.text)
-                    else: #Otherwise it was already put in the DB, we do nothing
-        
+  
