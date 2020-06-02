@@ -17,6 +17,7 @@ And, for the lambda function interacting with the dynamo DB, add a inline policy
 
 ### lambda functions
 The [first one](https://github.com/Ulysse-C/Projet_Serverless/blob/master/AWS/code/formRandomtoSqs.py) simply put generated data in the Sqs.
+
 In [this case](https://github.com/Ulysse-C/Projet_Serverless/blob/master/AWS/code/fromSqstoDynamo.js), the dynamo table has two Items,and the name "Test", id and numberGeneated, you can change the name and the amount if you do it everywere (the two functions and the Dynamo DB).
 
 ### Event
