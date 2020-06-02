@@ -2,7 +2,7 @@
 Simple setup for a Kibana dashboard with ElasticSearch on a private cluster
 
 ### What you will know
-![global schema](../../images/rapport4.png)
+![global schema](../images/rapport4.png)
 
 ## From Web to Kafka
 The Kafka used is a [kubeless distribution](https://github.com/kubeless/kafka-trigger/releases) for a easy use of triggers.
