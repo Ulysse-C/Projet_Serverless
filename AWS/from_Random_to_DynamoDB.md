@@ -16,7 +16,8 @@ then, for the one putting in the sqs, the policy : AmazonSQSFullAccess  (but I t
 And, for the lambda function interacting with the dynamo DB, add a inline policy, for the service dynamoDB, select the actions "PutItem" and "GetItem", finally, chose the dynamoDB you want to interact with as ressource, with it arn.
 
 ### lambda functions
-here, the dynamo table has two Items,and the name "Test", id and numberGeneated, you can change the name and the amount if you do it everywere (the two functions and the Dynamo DB).
+The [first one](https://github.com/Ulysse-C/Projet_Serverless/blob/master/AWS/code/formRandomtoSqs.py) simply put generated data in the Sqs.
+In [this case](https://github.com/Ulysse-C/Projet_Serverless/blob/master/AWS/code/fromSqstoDynamo.js), the dynamo table has two Items,and the name "Test", id and numberGeneated, you can change the name and the amount if you do it everywere (the two functions and the Dynamo DB).
 
 ### Event
 For a lambda function triggered with a timer, use the service CloudWatch, in Event/Rules, create a new rule with the trigger you want, for this example, chose schedule and the time you want, on the right pannel, add your lambda function as target.
