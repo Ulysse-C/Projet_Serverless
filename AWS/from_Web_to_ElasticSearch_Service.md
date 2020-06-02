@@ -2,7 +2,7 @@
 Simple setup for a Kibana dashboard with ElasticSearch Service on AWS
 
 ### What you will know
-![global schema](../../images/rapport3.png)
+![global schema](../images/rapport3.png)
 
 ### From Sqs to ElasticSearch Service
 The Sqs and the function used are the ones of **Part Two**.
