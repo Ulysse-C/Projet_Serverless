@@ -11,7 +11,7 @@ The dashboard is a public webpage hosted in Amazon S3 service. The page access t
 For one of the functions of this part, you will need to use an external package, to do so, I will recommend to use AWS CLI to make the operation of upload the zip with the function and the packages easier, see the official doc for more informations.
 
 ### From Web to SQS
-The simplest lambda function. It requests data from RTE's website. The data is pulled with the package, transformed from XML to JSON with xmltodict and is finally sent to the SQS.
+[This](https://github.com/Ulysse-C/Projet_Serverless/blob/master/AWS/code/fromWebtoSqs.py) lambda function requests data from RTE's website. The data is pulled with the package, transformed from XML to JSON with xmltodict and is finally sent to the SQS.
 
 ### From SQS to DynamoDB
-This functions parse the JSON data. Then for each value, it creates an add-request for the database and fills it.
+[This](https://github.com/Ulysse-C/Projet_Serverless/blob/master/AWS/code/fromSqstoDynamo.js) functions parse the JSON data. Then for each value, it creates an add-request for the database and fills it.
