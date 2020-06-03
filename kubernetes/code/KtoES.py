@@ -6,6 +6,7 @@ import requests
 host = "https://quickstart-es-http:9200"
 typeData = 'lambda-type'
 headers = { "Content-Type": "application/json" }
+password = "XXXX"
 
 
 def defineLatestDate(index):
@@ -22,14 +23,15 @@ def defineLatestDate(index):
             }
         ] 
     })
-    r = requests.post(host +'/'+ index + '/_search', auth=('elastic', 'Js5i27Las4jw41meD2331pco'), data=query, headers=headers, verify=False)
+    r = requests.post(host +'/'+ index + '/_search', auth=('elastic', password), data=query, headers=headers, verify=False)
     results = json.loads(r.text)
     result = None
-    print(results)
+    if(list(results.keys())[0] == "error"):
+        return datetime.datetime.strptime('2000-01-01T00:00:00', '%Y-%m-%dT%H:%M:%S')
     for hit in results['hits']['hits']: #The index exists
         result = formatDate(hit['_source']['Date'])
     if(result == None): #There is no index as specified, we query the DB without index
-        r = requests.post(host +'/'+ index + '/_search', auth=('elastic', 'Js5i27Las4jw41meD2331pco'), data=query, headers=headers, verify=False)
+        r = requests.post(host +'/'+ index + '/_search', auth=('elastic', password), data=query, headers=headers, verify=False)
         results = json.loads(r.text)
         for hit in results['hits']['hits']:
             result = formatDate(hit['_source']['Date'])
@@ -72,4 +74,4 @@ def handler(event, context):
                             'Date': date
                         }
                 if (testDate(latestDate, date)): #True if date appends later than the latest date in the DB
-                    r = requests.post(url, auth=('elastic', 'Js5i27Las4jw41meD2331pco'), json=v, headers=headers, verify=False)
+                    r = requests.post(url, auth=('elastic', password), json=v, headers=headers, verify=False)
