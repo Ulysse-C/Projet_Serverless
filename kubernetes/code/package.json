@@ -1,0 +1,8 @@
+{
+	"name": "hellowithdeps",
+	"version": "0.0.1",
+	"dependencies": {
+		"kafkajs": "^1.12.0",
+		"xml2json": "^0.12.0"
+	}
+}
