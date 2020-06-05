@@ -16,4 +16,4 @@ There is three part in this exemple:
 
 ### Kubernetes
 
-[4.](https://github.com/Ulysse-C/Projet_Serverless/blob/master/kubernetes/from_Web_to_ElasticSearch.md) A kubernetes version of the Aws part Three.
+[4.](https://github.com/Ulysse-C/Projet_Serverless/blob/master/kubernetes/from_Web_to_ElasticSearch.md) A kubernetes version of the Aws part Three, if you want a quick setup on your cluster, [there is a setup](https://github.com/Ulysse-C/Projet_Serverless/wiki/Project-quick-setup)
