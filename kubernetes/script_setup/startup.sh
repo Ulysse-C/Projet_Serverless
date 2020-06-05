@@ -48,6 +48,4 @@ curl https://raw.githubusercontent.com/Ulysse-C/Projet_Serverless/master/kuberne
 curl https://raw.githubusercontent.com/Ulysse-C/Projet_Serverless/master/kubernetes/code/package.json?token=APRSKMT5IMLJZ2KF6AYV6EC64NOF6 >> package.json
 curl https://raw.githubusercontent.com/Ulysse-C/Projet_Serverless/master/kubernetes/code/requirements.txt?token=APRSKMQ43WFHRE2AHM3DVT264NDNQ >> requirements.txt
 curl https://raw.githubusercontent.com/Ulysse-C/Projet_Serverless/master/kubernetes/script_setup/functions.sh?token=APRSKMTXAQ4V3O6CSP3G6PC64NVZU >> setup_functions.sh
-#PASSWORD=$(kubectl get secret quickstart-es-elastic-user -o go-template='{{.data.elastic | base64decode}}')
-#echo "PASSWORD: $PASSWORD" 
-#kubectl get svc -n kubeless kafka
+curl https://raw.githubusercontent.com/Ulysse-C/Projet_Serverless/master/kubernetes/script_setup/getdatas.sh?token=APRSKMUQCP7I6C4X6CHG22264NW6M >> usefull_data.sh
