@@ -13,17 +13,15 @@ module.exports =  {
 		const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: '2-digit', day: '2-digit' }) 
 		const [{ value: month },,{ value: day },,{ value: year }] = dateTimeFormat .formatToParts(date ) 
 		const d1 = `${day}/${month}/${year }`
-
 		https.get('https://rte-france.com/getEco2MixXml.php?type=mix&&dateDeb='+d1+'&dateFin='+d1+'&mode=NORM', async (resp) => {
 		  let data = '';
 		  resp.on('data', async (chunk) => {
 		    data += chunk;
 		  });
 		  resp.on('end', async () => {
-		    console.log(xmlParser.toJson(data));
 		    const producer = kafka.producer()
-		    console.log("Data" + xmlParser.toJson(data))
-			await producer.connect()
+		    console.log("Sending");
+		    await producer.connect()
 			await producer.send({
 			  topic: 'rte-france',
 			  messages: [
