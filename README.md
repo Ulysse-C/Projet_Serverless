@@ -3,6 +3,7 @@
 This project is the project of end of second year of engineering school.
 The objective was to get data from [Rte](https://rte-france.com/fr/eco2mix/eco2mix) to display it, using serverless technologies, especialy lambda functions.
 First using Aws services, then kubernetes.
+Check [the wiki](https://github.com/Ulysse-C/Projet_Serverless/wiki) for a quick tutorial of technologies we use.
 
 ### Aws
 There is three part in this exemple:
