@@ -6,7 +6,7 @@ module.exports =  {
 	tokafka: async function  (event, context) {
 		const kafka = new Kafka({
 		  clientId: 'fromWebtoKafka',
-		  brokers: ['10.0.1.250:9092']
+		  brokers: ['XX.X.X.XXX:9092']
 		})
 		
 		const date = Date.now()
